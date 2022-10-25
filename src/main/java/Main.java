@@ -39,7 +39,7 @@ public class Main {
             }
         }
     }
-
+    //rahmat nurilloh rahmat
     private static void settings() {
     }
 
