@@ -7,6 +7,7 @@ import java.util.Stack;
 @Getter
 public class User extends Base {
     private boolean isNew;
+    private String name;
     private int isNewCount;
     private String userName;
     private String password;
@@ -22,6 +23,7 @@ public class User extends Base {
     @Override
     public String toString() {
         return "User{" +
+                ", name='" + name + '\'' +
                 ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +

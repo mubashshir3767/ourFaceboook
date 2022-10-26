@@ -10,7 +10,6 @@ import lombok.ToString;
 
 public abstract class Base {
     private int id;
-    private String name;
     private int genetarion=0;
     public Base() {
         this.id = genetarion++;

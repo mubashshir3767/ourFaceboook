@@ -8,23 +8,24 @@ import java.util.ArrayList;
 public class UserService implements BaseService {
     ArrayList<User> users = new ArrayList<>();
 
-    public boolean login(String password, String number) {
+    public User login(String password, String number) {
         for (User user : users) {
             if (user != null) {
                 if (user.getPassword().equals(password)) {
                     if (user.getPhoneNumber().equals(number)) {
-                        return true;
+                        return user;
                     }
                 }
             }
         }
-        return false;
+        return null;
     }
 
     @Override
     public boolean add() {
-        User user = new User();
-        User user1 = RegisterDto.sing_up(user);
+      return true;
+    }
+    public boolean add(User user1){
         if (getById(user1.getId()) == null) {
             users.add(user1);
             return true;

@@ -1,12 +1,7 @@
 package service;
 
-import dto.LentaDto;
 import model.PostList;
-import model.User;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Stack;
 
 public class PostListService {
@@ -25,15 +20,32 @@ public class PostListService {
 
     public void add(PostList postList) {
         if (postList != null) {
+            postList.setPostNumeric(1);
             postLists.add(postList);
         }
     }
 
-    public PostList showGetId(int id) {
-        if (getById(id) != null) {
-            return getById(id);
+    public PostList showUserId(int id) {
+        for (PostList postList : postLists) {
+            if (postList != null) {
+                if (id == postList.getUserId()) {
+                    return postList;
+                }
+            }
         }
+        System.out.println("post mavjud emas!");
         return null;
+    }
+
+    public void showGetNUm(int num,int id) {
+        for (PostList postList : postLists) {
+            if (postList != null) {
+                if (num == postList.getPostNumeric()) {
+                    if (id == postList.getId())
+                     System.out.println(postList);
+                }
+            }
+        }
     }
 
     public boolean edit(int id, PostList postList) {
